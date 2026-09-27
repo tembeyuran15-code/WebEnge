@@ -1303,3 +1303,155 @@ section {
         transform: rotate(-45deg) translate(5px, -5px);
 
     }
+/* =========================================================
+   RESPONSIVO — MOBILE FIRST
+   ========================================================= */
+
+/* Tablet e mobile */
+@media (max-width: 900px) {
+
+  /* Esconde o menu por defeito */
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    box-shadow: 0 12px 30px rgba(11, 42, 74, 0.15);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .main-nav ul li {
+    border-bottom: 1px solid rgba(11, 42, 74, 0.06);
+  }
+
+  .main-nav ul li:last-child {
+    border-bottom: none;
+    padding: 16px;
+  }
+
+  .main-nav ul li a {
+    display: block;
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+
+  /* SÓ quando tem a classe .open é que aparece */
+  .main-nav.open {
+    max-height: 500px;
+  }
+
+  /* Botão hambúrguer visível */
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: #0B2A4A;
+    cursor: pointer;
+  }
+
+  /* Hero mais compacto no mobile */
+  .hero {
+    min-height: 80vh;
+    background-attachment: scroll; /* evita problemas de performance */
+    padding: 60px 0 40px;
+  }
+
+  .hero-inner {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-badges {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Grelhas passam a 1 coluna */
+  .services-grid,
+  .projects-grid,
+  .testimonials-grid,
+  .process-steps,
+  .stats-grid,
+  .about-grid,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  /* Textos ajustados */
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.5rem; }
+
+  .section-header {
+    margin-bottom: 40px;
+    padding: 0 16px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  /* Secções com menos espaçamento */
+  .services,
+  .projects-featured,
+  .about-preview,
+  .testimonials,
+  .process,
+  .faq {
+    padding: 60px 0;
+  }
+
+  /* Footer empilhado */
+  .footer-grid {
+    padding-bottom: 40px;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .legal-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.65rem; }
+  .hero-badges li { font-size: 0.8rem; }
+  .btn { padding: 12px 20px; font-size: 0.9rem; }
+}
